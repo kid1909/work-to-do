@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Employee from "./Employee";
 import { useContext, useState } from "react";
 import { EmployeeContext } from "../contexts/EmployeeContext";
@@ -17,6 +17,11 @@ const EmployeeList = () => {
   const handleClose = () => {
     setShow(false);
   };
+
+  useEffect(() => {
+    console.log("Component mounted");
+    handleClose();
+  }, [employees]);
 
   return (
     <React.Fragment>

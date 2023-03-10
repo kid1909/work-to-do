@@ -41,8 +41,22 @@ const EmployeeContextProvider = (props) => {
       phone: "(480) 631-2097",
     },
   ]);
+
+  const addEmployee = (name, email, address, phone) => {
+    setEmployees([...employees, { id: uuidv4(), name, email, address, phone }]);
+  };
+
+  const deleteEmployee = (id) => {
+    setEmployees(employees.filter((employee) => employee.id !== id));
+  };
+
+  const updateEmployee = (id) => {
+    setEmployees(employees.map((employee) => employee.id === id));
+  };
   return (
-    <EmployeeContext.Provider value={{ employees }}>
+    <EmployeeContext.Provider
+      value={{ employees, addEmployee, deleteEmployee, updateEmployee }}
+    >
       {props.children}
     </EmployeeContext.Provider>
   );
