@@ -53,7 +53,7 @@ const Employee = ({ employee }) => {
           <Modal.Title>Edit Employee</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <EditForm />
+          <EditForm theEmployee={employee} />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
