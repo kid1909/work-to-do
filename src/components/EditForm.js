@@ -15,8 +15,9 @@ const EditForm = ({ theEmployee }) => {
   const updatedEmployee = { id, name, email, address, phone };
 
   const handleSubmit = (e) => {
-    e.prevenDefault();
+    e.preventDefault();
     updateEmployee(id, updatedEmployee);
+    console.log("Employee " + theEmployee.name + "is edited");
   };
 
   return (
